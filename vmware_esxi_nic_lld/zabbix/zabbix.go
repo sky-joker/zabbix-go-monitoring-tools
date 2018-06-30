@@ -66,8 +66,8 @@ func doMain(opt *cli.Context) {
 	var Nics struct {
 		Nic string `json:"{#NIC}"`
 	}
-	for _, v := range host {
-		for _, p := range v.Config.Network.Pnic {
+	for _, m := range host {
+		for _, p := range m.Config.Network.Pnic {
 			Nics.Nic = p.Device
 			zbx.Data = append(zbx.Data, Nics)
 		}
